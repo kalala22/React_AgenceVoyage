@@ -12,10 +12,10 @@ export default function AppBar() {
     { id: 3, title: "Flights" , },
     { id: 4, title: "Bookings", },
     { id: 5, title: "Login" , },
-    { id: 6, title: "Sign Up" , style: "border border-black px-4 py-2 rounded-sm" },
+    { id: 6, title: "Sign Up" , style: "border  px-4 py-2 rounded-sm hover:cursor-pointer hover:bg-primary hover:text-white hover:border-white transition duration-300" },
   ];
   const navItems = appbars.map((appbar) => (
-    <li key={appbar.id}  className={appbar.style ? appbar.style : ""}>
+    <li key={appbar.id}  className={appbar.style ? appbar.style : "hover:cursor-pointer hover:text-primary transition duration-300"}>
       {appbar.title}
     </li>
   ));
