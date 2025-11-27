@@ -1,8 +1,35 @@
+import LogoHeader from "./LogoHeader";
+
+interface AppBarList {
+  id: number;
+  title: string;
+  style?: string;
+}
 export default function AppBar() {
+  const appbars: AppBarList[] = [
+    { id: 1, title: "Destinations", },
+    { id: 2, title: "Hotels", },
+    { id: 3, title: "Flights" , },
+    { id: 4, title: "Bookings", },
+    { id: 5, title: "Login" , },
+    { id: 6, title: "Sign Up" , style: "border border-black px-4 py-2 rounded-sm" },
+  ];
+  const navItems = appbars.map((appbar) => (
+    <li key={appbar.id}  className={appbar.style ? appbar.style : ""}>
+      {appbar.title}
+    </li>
+  ));
   return (
     <header>
-      <nav className=" p-4 text-white">
-        <h1 className="text-2xl text-black font-display font-bold">Jadoo</h1>
+      <nav className="p-4 flex justify-between items-center font-roboto text-lg">
+       <div>
+        <LogoHeader />
+       </div>
+       <div>
+          <ul className="flex space-x-12 items-center ">
+            {navItems}
+          </ul>
+       </div>
       </nav>
     </header>
   );
